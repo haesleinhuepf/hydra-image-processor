@@ -48,6 +48,8 @@
     <OutDir>$(SolutionDir)Output\$(ProjectName)\$(Configuration)_$(PlatformName)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)_$(PlatformName)\</IntDir>
     <TargetExt>.dll</TargetExt>
+    <IncludePath>C:\Program Files\MATLAB\R2019b\extern\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MATLAB\R2019b\extern\lib\win64\microsoft;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -79,6 +81,8 @@ copy $(OutDir)CudaMex.dll "$(ProjectDir)Mex.mexw64"</Command>
       <AdditionalIncludeDirectories>.;$(MATLAB_DIR)\extern\include;external</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>MEX_BUILD;_WINDLL;USE_PROCESS_MUTEX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>cudamex.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

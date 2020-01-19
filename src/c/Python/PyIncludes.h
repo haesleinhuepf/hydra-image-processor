@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
